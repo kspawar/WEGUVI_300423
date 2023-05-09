@@ -1,0 +1,52 @@
+IMDB Database:
+
+User{
+UserID		INTEGER  Primary Key,
+UserName	TEXT,
+EmailID		TEXT,
+Phone		TEXT
+};
+
+Movie{
+MovieID		INTEGER	 Primary Key,
+Title		TEXT
+};
+
+Media{
+MediaID		INTEGER Primary Key,
+MediaType	TEXT,
+MovieID		INTEGER Foreign Key (Movie)
+};
+
+Review{
+ReviewID	INTEGER	 Primary Key,
+UserID		INTEGER  Foreign Key (User),
+ReviewDesc	TEXT,
+MovieID		INTEGER  Foreign Key (Movie)
+};
+
+Genre{
+GenreID		INTEGER  Primary Key,
+GenreDesc	TEXT,
+MovieID		INTEGER  Foreign Key (Movie)
+};
+
+Artist{
+ArtistID	INTEGER Primary Key,
+ArtistName	TEXT
+};
+
+ArtRoles{
+RoleID		INTEGER Primary Key,
+RoleName	TEXT,
+ArtistID	INTEGER Foreign Key (Artist),
+MovieID		INTEGER Foreign Key (Movie)
+};
+
+ArtSkills{
+SkillID		INTEGER Primary Key,
+SkillDesc	TEXT,
+ArtistID	INTEGER Foreign Key (Artist)
+};
+
+
